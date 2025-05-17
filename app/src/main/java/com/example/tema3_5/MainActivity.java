@@ -84,12 +84,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Abriendo pantalla de registro...", Toast.LENGTH_SHORT).show(); // Opcional
             return true; // Indica que el evento fue manejado
 
-
-            //Toast.makeText(this, "Registro", Toast.LENGTH_SHORT).show();
-            //return true; // Indicate that the event was handled
-        } else if (itemId == R.id.mnInicio) {
-            Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show();
-            return true; // Indicate that the event was handled
         } else {
             return super.onOptionsItemSelected(item); // Default handling
         }
