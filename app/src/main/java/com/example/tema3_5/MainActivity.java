@@ -1,5 +1,6 @@
 package com.example.tema3_5;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.Menu; //Realizamos el import del paquete android.view.Menu para poder instanciar la clase del tipo Menu.
@@ -73,11 +74,19 @@ public class MainActivity extends AppCompatActivity {
         int itemId = item.getItemId(); // Get the item ID once
 
         if (itemId == R.id.mnLogin) {
-            Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
             return true; // Indicate that the event was handled
         } else if (itemId == R.id.mnRegistro) {
-            Toast.makeText(this, "Registro", Toast.LENGTH_SHORT).show();
-            return true; // Indicate that the event was handled
+
+            // Crea un Intent para iniciar RegistrarActivity
+            Intent intent = new Intent(this, RegistarActivity.class); // Asegúrate de que RegistrarActivity exista
+            startActivity(intent); // Inicia la actividad
+            Toast.makeText(this, "Abriendo pantalla de registro...", Toast.LENGTH_SHORT).show(); // Opcional
+            return true; // Indica que el evento fue manejado
+
+
+            //Toast.makeText(this, "Registro", Toast.LENGTH_SHORT).show();
+            //return true; // Indicate that the event was handled
         } else if (itemId == R.id.mnInicio) {
             Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show();
             return true; // Indicate that the event was handled
