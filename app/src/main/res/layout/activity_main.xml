@@ -29,7 +29,7 @@
         android:layout_marginTop="66dp"
         android:layout_marginEnd="52dp"
         android:text="Usuario"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText"
+        app:layout_constraintEnd_toStartOf="@+id/txtIngresoUsuario"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -41,13 +41,13 @@
         android:layout_marginTop="66dp"
         android:layout_marginEnd="52dp"
         android:text="Password"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword"
+        app:layout_constraintEnd_toStartOf="@+id/txtIngresoPassword"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblUsername" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/txtIngresoUsuario"
         android:layout_width="205dp"
         android:layout_height="29dp"
         android:layout_marginTop="64dp"
@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/txtIngresoPassword"
         android:layout_width="205dp"
         android:layout_height="29dp"
         android:layout_marginTop="64dp"
@@ -68,7 +68,7 @@
         android:hint="Ingreso de password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/lblpassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/txtIngresoUsuario" />
 
     <Button
         android:id="@+id/button"
@@ -80,7 +80,7 @@
         android:text="Ingresar"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/txtIngresoPassword" />
 
     <Button
         android:id="@+id/button2"
@@ -92,6 +92,6 @@
         android:text="Salir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/txtIngresoPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
