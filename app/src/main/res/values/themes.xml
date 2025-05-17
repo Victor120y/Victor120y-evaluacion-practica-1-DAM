@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Tema3_5" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="android:textColorPrimary">@color/grey</item>
+        <item name="android:textViewStyle">@style/textviewPersonalizado</item>
+        <item name="editTextStyle">@style/edittextPersonalizado</item>
+        <item name="materialButtonStyle">@style/buttonPersonalizado</item>
+
+    </style>
+
+    <style name="textviewPersonalizado" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:fontStyle">italic</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="edittextPersonalizado" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:background">@color/grey</item>
+    </style>
+
+    <style name="buttonPersonalizado" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:backgroundTint">@color/red</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.buttonPersonalizado</item>
+    </style>
+
+    <style name="ShapeAppearance.buttonPersonalizado" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="Theme.Tema3_5" parent="Base.Theme.Tema3_5" />
+</resources>
