@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".RegistarActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -33,19 +33,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <TextView
-        android:id="@+id/lblpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="29dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginEnd="52dp"
-        android:text="Password"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblUsername" />
-
     <EditText
         android:id="@+id/editTextText"
         android:layout_width="205dp"
@@ -58,40 +45,96 @@
         app:layout_constraintStart_toEndOf="@+id/lblUsername"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <TextView
+        android:id="@+id/lblUserEMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="214dp" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="205dp"
+        android:layout_height="29dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Ingreso de email"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="214dp" />
+
+
+    <TextView
+        android:id="@+id/lblpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="52dp"
+        android:text="Password"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblUsername" />
+
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="205dp"
         android:layout_height="29dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="144dp"
         android:layout_marginEnd="52dp"
-        android:inputType="textPassword"
         android:hint="Ingreso de password"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/lblpassword"
         app:layout_constraintTop_toBottomOf="@+id/editTextText" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="110dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="145dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="22dp"
-        android:text="Ingresar"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <TextView
+        android:id="@+id/lblpassword2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="389dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword2"
+        android:layout_width="205dp"
+        android:layout_height="29dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Repita el password"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="389dp" />
+
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnRegresar"
         android:layout_width="110dp"
         android:layout_height="48dp"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="192dp"
         android:layout_marginEnd="50dp"
-        android:text="Salir"
+        android:text="Regresar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/btnGuardar"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="110dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="22dp"
+        android:text="Guardar"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegresar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
