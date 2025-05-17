@@ -4,7 +4,10 @@ import android.os.Bundle;
 
 import android.view.Menu; //Realizamos el import del paquete android.view.Menu para poder instanciar la clase del tipo Menu.
 import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,11 +35,55 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main,menu);
+        //getMenuInflater().inflate(R.menu.menu_main, menu);
 
         //Snackbar.make(layoud, "barrar activada", Snackbar.LENGTH_LONG).show();
         return super.onCreateOptionsMenu(menu);
+    }
+
+    /*
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.mnLogin:
+                //Snackbar.make(layoud, "Configuracion activada", Snackbar.LENGTH_LONG).show();
+                Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.mnRegistro:
+                //Snackbar.make(layoud, "Acerca de activada", Snackbar.LENGTH_LONG).show();
+                Toast.makeText(this, "Registro", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.mnInicio:
+                //Snackbar.make(layoud, "Salir activada", Snackbar.LENGTH_LONG).show();
+                finish();
+                Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    */
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId(); // Get the item ID once
+
+        if (itemId == R.id.mnLogin) {
+            Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
+            return true; // Indicate that the event was handled
+        } else if (itemId == R.id.mnRegistro) {
+            Toast.makeText(this, "Registro", Toast.LENGTH_SHORT).show();
+            return true; // Indicate that the event was handled
+        } else if (itemId == R.id.mnInicio) {
+            finish();
+            Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show();
+            return true; // Indicate that the event was handled
+        } else {
+            return super.onOptionsItemSelected(item); // Default handling
+        }
     }
 }
