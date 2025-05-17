@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Registro", Toast.LENGTH_SHORT).show();
             return true; // Indicate that the event was handled
         } else if (itemId == R.id.mnInicio) {
-            finish();
             Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show();
             return true; // Indicate that the event was handled
         } else {
