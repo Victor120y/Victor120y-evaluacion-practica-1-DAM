@@ -25,134 +25,119 @@
         android:id="@+id/lblUsername"
         android:layout_width="wrap_content"
         android:layout_height="29dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginEnd="52dp"
-        android:text="Usuario"
-        app:layout_constraintEnd_toStartOf="@+id/txtIngresoUsuario"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="17dp"
+        android:text="Nombre usuario"
+        android:textColor="#0B0B0B"
+        app:layout_constraintBottom_toTopOf="@+id/txtIngresoUsuario"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
 
     <EditText
         android:id="@+id/txtIngresoUsuario"
         android:layout_width="205dp"
         android:layout_height="29dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="53dp"
-        android:inputType="text"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="8dp"
         android:hint="Ingreso de usuario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblUsername"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblUsername" />
 
     <TextView
         android:id="@+id/lblUserEMail"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="65dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="18dp"
         android:text="Email"
-        app:layout_constraintBottom_toTopOf="@+id/lblpassword"
-        app:layout_constraintEnd_toStartOf="@+id/txtIngresoEmail"
+        android:textColor="#0B0B0B"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/txtIngresoUsuario" />
 
     <EditText
         android:id="@+id/txtIngresoEmail"
         android:layout_width="205dp"
         android:layout_height="29dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Ingreso de email"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblUserEMail"
-        app:layout_constraintTop_toBottomOf="@+id/txtIngresoUsuario" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblUserEMail" />
 
     <TextView
         android:id="@+id/lblpassword"
         android:layout_width="wrap_content"
         android:layout_height="29dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="18dp"
         android:text="Password"
-        app:layout_constraintEnd_toStartOf="@+id/txtIngresoPassword"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textColor="#0B0B0B"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/txtIngresoEmail" />
+
 
     <EditText
         android:id="@+id/txtIngresoPassword"
         android:layout_width="205dp"
         android:layout_height="29dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="59dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="8dp"
         android:hint="Ingreso de password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblpassword"
-        app:layout_constraintTop_toBottomOf="@+id/txtIngresoUsuario" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblpassword" />
 
 
     <TextView
         android:id="@+id/lblpassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="52dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/txtIngresoPassword2"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="18dp"
+        android:text="confirmar Password"
+        android:textColor="#0B0B0B"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="389dp" />
+        app:layout_constraintTop_toBottomOf="@+id/txtIngresoPassword" />
 
     <EditText
         android:id="@+id/txtIngresoPassword2"
         android:layout_width="205dp"
         android:layout_height="29dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginEnd="55dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Repita el password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblpassword2"
-        app:layout_constraintTop_toBottomOf="@+id/txtIngresoPassword" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblpassword2" />
 
     <Button
         android:id="@+id/btnRegresar"
         android:layout_width="115dp"
         android:layout_height="48dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="193dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="80dp"
         android:text="Regresar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnGuardar"
-        app:layout_constraintTop_toBottomOf="@+id/txtIngresoPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/txtIngresoPassword2" />
 
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="115dp"
         android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="193dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
         android:text="Guardar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnRegresar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtIngresoPassword" />
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/txtIngresoPassword2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Login de usuario</string>
-
+    <string name="register_activity_title">Nuevo Usuario</string>
 </resources>
