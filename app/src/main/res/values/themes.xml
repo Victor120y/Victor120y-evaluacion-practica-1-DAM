@@ -27,7 +27,7 @@
 
     <style name="buttonPersonalizado" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:textColor">@color/grey</item>
-        <item name="android:backgroundTint">@color/red</item>
+        <item name="android:backgroundTint">@color/blue</item>
         <item name="shapeAppearance">@style/ShapeAppearance.buttonPersonalizado</item>
     </style>
 
