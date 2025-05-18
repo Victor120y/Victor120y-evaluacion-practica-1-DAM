@@ -107,8 +107,16 @@ public class RegistarActivity extends AppCompatActivity {
                 editorpref.apply();
 
                 Toast.makeText(RegistarActivity.this, "Usuario guardado con éxito", Toast.LENGTH_LONG).show();
+
+                // --- INICIO: Limpiar los EditText ---
+                txtIngresoUsuario.setText("");
+                txtIngresoEmail.setText("");
+                txtIngresoPassword.setText("");
+                txtIngresoPassword2.setText("");
+                // --- FIN: Limpiar los EditText ---
             }
         });
+
         btnRegresar.setOnClickListener(v -> {
                     // Crea un Intent para iniciar RegistrarActivity
                     Intent intent = new Intent(this, MainActivity.class); // aqui pasamos al home
