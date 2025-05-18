@@ -1,6 +1,14 @@
 package com.example.tema3_5;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,5 +38,40 @@ public class RegistarActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        TextView edtSalida = findViewById(R.id.edtSalida);
+        Button btnGuardar = findViewById(R.id.btnGuardar);
+        Button btnRegresar = findViewById(R.id.btnRegresar);
+        EditText txtIngresoUsuario = findViewById(R.id.txtIngresoUsuario);
+        EditText txtIngresoEmail = findViewById(R.id.txtIngresoEmail);
+        EditText txtIngresoPassword = findViewById(R.id.txtIngresoPassword);
+        EditText txtIngresoPassword2 = findViewById(R.id.txtIngresoPassword2);
+        btnGuardar.setOnClickListener(new View.OnClickListener() {
+            // @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View v) {
+                SharedPreferences usuarios = getSharedPreferences("preferences", Context.MODE_PRIVATE);
+
+                String Usuario = txtIngresoUsuario.getText().toString();
+                String Email = txtIngresoEmail.getText().toString();
+                String Clave = txtIngresoPassword.getText().toString();
+                String Clave1 = txtIngresoPassword2.getText().toString();
+                SharedPreferences.Editor editorpref = usuarios.edit();
+                editorpref.putString("Usuario", Usuario); // Clave única
+                editorpref.putString("Email", Email);     // Clave única
+                editorpref.putString("Clave", Clave);     // Clave única
+                editorpref.putString("Clave1", Clave1);   // Clave única
+                editorpref.apply();
+
+                Toast.makeText(RegistarActivity.this, "Usuario guardado con éxito", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        btnRegresar.setOnClickListener(v -> {
+                    // Crea un Intent para iniciar RegistrarActivity
+                    Intent intent = new Intent(this, MainActivity.class); // aqui pasamos al home
+                    startActivity(intent); // Inicia la actividad
+                    Toast.makeText(this, "Abriendo pantalla de home...", Toast.LENGTH_SHORT).show(); // Opcional
+        });
     }
+
 }
