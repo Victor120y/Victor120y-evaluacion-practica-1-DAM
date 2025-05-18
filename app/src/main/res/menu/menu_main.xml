@@ -7,14 +7,14 @@
     <item
         android:id="@+id/mnLogin"
         android:title="Login"
-        app:showAsAction="always"/>
+        app:showAsAction="never"/>
     <item
         android:id="@+id/mnRegistro"
         android:title="Registro"
-        app:showAsAction="always"/>
+        app:showAsAction="never"/>
     <item
         android:id="@+id/mnSalir"
         android:title="Salir"
-        app:showAsAction="always"/>
+        app:showAsAction="never"/>
     
 </menu>

@@ -1,12 +1,16 @@
 package com.example.tema3_5;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -62,5 +66,23 @@ public class HomeActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId(); // Get the item ID once
+
+        if (itemId == R.id.action_settings) {
+            Toast.makeText(this, "Aun no hay nada", Toast.LENGTH_SHORT).show();
+            return true; // Indicate that the event was handled
+        }
+        else if (itemId == R.id.mnSalir) {
+
+            finishAffinity();
+            return true; // Indica que el evento fue manejado
+
+        } else {
+            return super.onOptionsItemSelected(item); // Default handling
+        }
     }
 }
