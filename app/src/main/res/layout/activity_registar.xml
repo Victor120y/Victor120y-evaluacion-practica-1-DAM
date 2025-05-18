@@ -21,28 +21,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+
     <TextView
         android:id="@+id/lblUsername"
         android:layout_width="wrap_content"
         android:layout_height="29dp"
-        android:layout_marginStart="61dp"
+        android:layout_marginStart="168dp"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginBottom="20dp"
         android:text="Nombre usuario"
-        android:textColor="#0B0B0B"
         app:layout_constraintBottom_toTopOf="@+id/txtIngresoUsuario"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-
     <EditText
         android:id="@+id/txtIngresoUsuario"
-        android:layout_width="205dp"
+        android:layout_width="250dp"
         android:layout_height="29dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
         android:hint="Ingreso de usuario"
         android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblUsername" />
 
@@ -50,95 +51,80 @@
         android:id="@+id/lblUserEMail"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="20dp"
         android:text="Email"
-        android:textColor="#0B0B0B"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtIngresoUsuario" />
 
     <EditText
         android:id="@+id/txtIngresoEmail"
-        android:layout_width="205dp"
+        android:layout_width="250dp"
         android:layout_height="29dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
         android:ems="10"
         android:hint="Ingreso de email"
         android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblUserEMail" />
+
 
     <TextView
         android:id="@+id/lblpassword"
         android:layout_width="wrap_content"
         android:layout_height="29dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="20dp"
         android:text="Password"
-        android:textColor="#0B0B0B"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtIngresoEmail" />
 
-
     <EditText
         android:id="@+id/txtIngresoPassword"
-        android:layout_width="205dp"
+        android:layout_width="250dp"
         android:layout_height="29dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
         android:hint="Ingreso de password"
         android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblpassword" />
-
 
     <TextView
         android:id="@+id/lblpassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="24dp"
         android:text="confirmar Password"
-        android:textColor="#0B0B0B"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtIngresoPassword" />
 
     <EditText
         android:id="@+id/txtIngresoPassword2"
-        android:layout_width="205dp"
+        android:layout_width="250dp"
         android:layout_height="29dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
         android:ems="10"
         android:hint="Repita el password"
         android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblpassword2" />
-
-    <TextView
-        android:id="@+id/edtSalida"
-        android:layout_width="181dp"
-        android:layout_height="124dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="293dp"
-        android:layout_marginBottom="162dp"
-        android:textColor="#E91E63"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGuardar"
-        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnRegresar"
         android:layout_width="115dp"
         android:layout_height="48dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="50dp"
         android:text="Regresar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnGuardar"
@@ -148,8 +134,8 @@
         android:id="@+id/btnGuardar"
         android:layout_width="115dp"
         android:layout_height="48dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="32dp"
         android:text="Guardar"
         app:layout_constraintEnd_toStartOf="@+id/btnRegresar"

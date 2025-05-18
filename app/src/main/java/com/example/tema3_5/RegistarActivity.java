@@ -38,7 +38,6 @@ public class RegistarActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        TextView edtSalida = findViewById(R.id.edtSalida);
         Button btnGuardar = findViewById(R.id.btnGuardar);
         Button btnRegresar = findViewById(R.id.btnRegresar);
         EditText txtIngresoUsuario = findViewById(R.id.txtIngresoUsuario);
@@ -115,6 +114,7 @@ public class RegistarActivity extends AppCompatActivity {
                     Intent intent = new Intent(this, MainActivity.class); // aqui pasamos al home
                     startActivity(intent); // Inicia la actividad
                     Toast.makeText(this, "Abriendo pantalla de home...", Toast.LENGTH_SHORT).show(); // Opcional
+                    finish();
         });
     }
 
