@@ -45,7 +45,7 @@ public class RegistarActivity extends AppCompatActivity {
         EditText txtIngresoEmail = findViewById(R.id.txtIngresoEmail);
         EditText txtIngresoPassword = findViewById(R.id.txtIngresoPassword);
         EditText txtIngresoPassword2 = findViewById(R.id.txtIngresoPassword2);
-        btnGuardar.setOnClickListener(new View.OnClickListener() {
+       /* btnGuardar.setOnClickListener(new View.OnClickListener() {
             // @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
@@ -55,6 +55,7 @@ public class RegistarActivity extends AppCompatActivity {
                 String Email = txtIngresoEmail.getText().toString();
                 String Clave = txtIngresoPassword.getText().toString();
                 String Clave1 = txtIngresoPassword2.getText().toString();
+
                 SharedPreferences.Editor editorpref = usuarios.edit();
                 editorpref.putString("Usuario", Usuario); // Clave única
                 editorpref.putString("Email", Email);     // Clave única
@@ -64,8 +65,51 @@ public class RegistarActivity extends AppCompatActivity {
 
                 Toast.makeText(RegistarActivity.this, "Usuario guardado con éxito", Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
 
+        btnGuardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String Usuario = txtIngresoUsuario.getText().toString().trim();
+                String Email = txtIngresoEmail.getText().toString().trim();
+                String Clave = txtIngresoPassword.getText().toString();
+                String Clave1 = txtIngresoPassword2.getText().toString();
+
+                // Validación del nombre de usuario
+                if (Usuario.length() < 3) {
+                    Toast.makeText(RegistarActivity.this, "El nombre de usuario debe tener al menos 3 caracteres", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                // Validación del formato del email
+                if (!android.util.Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
+                    Toast.makeText(RegistarActivity.this, "Ingrese un correo electrónico válido", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                // Validación de la longitud y formato del password
+                if (Clave.length() < 5 || !Clave.matches("^(?=.*[a-zA-Z])(?=.*\\d).+$")) {
+                    Toast.makeText(RegistarActivity.this, "La contraseña debe tener al menos 5 caracteres y ser alfanumérica", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                // Validación de confirmación del password
+                if (!Clave.equals(Clave1)) {
+                    Toast.makeText(RegistarActivity.this, "Las contraseñas no coinciden", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                // Guardar los datos en SharedPreferences
+                SharedPreferences usuarios = getSharedPreferences("preferences", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editorpref = usuarios.edit();
+                editorpref.putString("Usuario", Usuario); // Clave única
+                editorpref.putString("Email", Email);     // Clave única
+                editorpref.putString("Clave", Clave);     // Clave única
+                editorpref.apply();
+
+                Toast.makeText(RegistarActivity.this, "Usuario guardado con éxito", Toast.LENGTH_LONG).show();
+            }
+        });
         btnRegresar.setOnClickListener(v -> {
                     // Crea un Intent para iniciar RegistrarActivity
                     Intent intent = new Intent(this, MainActivity.class); // aqui pasamos al home
