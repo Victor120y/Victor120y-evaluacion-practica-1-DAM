@@ -87,29 +87,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    /*
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.mnLogin:
-                //Snackbar.make(layoud, "Configuracion activada", Snackbar.LENGTH_LONG).show();
-                Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.mnRegistro:
-                //Snackbar.make(layoud, "Acerca de activada", Snackbar.LENGTH_LONG).show();
-                Toast.makeText(this, "Registro", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.mnInicio:
-                //Snackbar.make(layoud, "Salir activada", Snackbar.LENGTH_LONG).show();
-                finish();
-                Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    */
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId(); // Get the item ID once
@@ -123,6 +100,11 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, RegistarActivity.class); // Asegúrate de que RegistrarActivity exista
             startActivity(intent); // Inicia la actividad
             Toast.makeText(this, "Abriendo pantalla de registro...", Toast.LENGTH_SHORT).show(); // Opcional
+            return true; // Indica que el evento fue manejado
+
+        }else if (itemId == R.id.mnSalir) {
+
+            finishAffinity();
             return true; // Indica que el evento fue manejado
 
         } else {

@@ -12,5 +12,9 @@
         android:id="@+id/mnRegistro"
         android:title="Registro"
         app:showAsAction="always"/>
+    <item
+        android:id="@+id/mnSalir"
+        android:title="Salir"
+        app:showAsAction="always"/>
     
 </menu>
