@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Tema3_5"
+rootProject.name = "veterinaria-app"
 include(":app")

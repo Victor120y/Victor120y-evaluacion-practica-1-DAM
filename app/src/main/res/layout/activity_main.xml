@@ -24,46 +24,45 @@
     <TextView
         android:id="@+id/lblUsername"
         android:layout_width="wrap_content"
-        android:layout_height="29dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginEnd="52dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="57dp"
         android:text="Usuario"
         app:layout_constraintEnd_toStartOf="@+id/txtIngresoUsuario"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/imgSesion" />
 
     <TextView
         android:id="@+id/lblpassword"
         android:layout_width="wrap_content"
-        android:layout_height="29dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginEnd="52dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="43dp"
         android:text="Password"
         app:layout_constraintEnd_toStartOf="@+id/txtIngresoPassword"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblUsername" />
 
     <EditText
         android:id="@+id/txtIngresoUsuario"
-        android:layout_width="205dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="53dp"
-        android:inputType="text"
+        android:layout_width="212dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="34dp"
         android:hint="Ingreso de usuario"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/lblUsername"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/imgSesion" />
 
     <EditText
         android:id="@+id/txtIngresoPassword"
-        android:layout_width="205dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="59dp"
+        android:layout_width="212dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="34dp"
         android:hint="Ingreso de password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,26 +71,37 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="110dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="145dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="22dp"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="60dp"
         android:text="Ingresar"
-        app:layout_constraintEnd_toStartOf="@+id/btnSalir"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtIngresoPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/lblpassword" />
 
     <Button
         android:id="@+id/btnSalir"
-        android:layout_width="110dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="60dp"
         android:text="Salir"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/txtIngresoPassword" />
+
+    <ImageView
+        android:id="@+id/imgSesion"
+        android:layout_width="365dp"
+        android:layout_height="368dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="85dp"
+        app:layout_constraintBottom_toTopOf="@+id/lblUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/veterinaria" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
-package com.example.tema3_5;
+package com.example.veterinaria;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +17,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tema3_5.databinding.ActivityHomeBinding;
+import com.example.veterinaria.databinding.ActivityHomeBinding;
 
 public class HomeActivity extends AppCompatActivity {
 
