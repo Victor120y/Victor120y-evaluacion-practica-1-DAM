@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.tema3_5"
+    namespace = "com.example.veterinaria"
     compileSdk = 35
 
     defaultConfig {
@@ -47,4 +47,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    val room_version = "2.7.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
+
 }

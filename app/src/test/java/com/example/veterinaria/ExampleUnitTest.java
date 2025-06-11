@@ -1,4 +1,4 @@
-package com.example.tema3_5;
+package com.example.veterinaria;
 
 import org.junit.Test;
 

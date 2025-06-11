@@ -1,4 +1,4 @@
-package com.example.tema3_5.ui.gallery;
+package com.example.veterinaria.ui.gallery;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.tema3_5.databinding.FragmentGalleryBinding;
+import com.example.veterinaria.databinding.FragmentGalleryBinding;
 
 public class GalleryFragment extends Fragment {
 

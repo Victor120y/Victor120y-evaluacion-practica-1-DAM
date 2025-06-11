@@ -1,4 +1,4 @@
-package com.example.tema3_5.ui.slideshow;
+package com.example.veterinaria.ui.slideshow;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
