@@ -28,4 +28,10 @@
         android:name="com.example.veterinaria.fragment_paciente"
         android:label="Pacientes"
         tools:layout="@layout/fragment_paciente" />
+
+    <fragment
+        android:id="@+id/nav_lista_pacientes"
+        android:name="com.example.veterinaria.fragment_lista_pacientes"
+        android:label="Lista Pacientes"
+        tools:layout="@layout/fragment_lista_pacientes" />
 </navigation>

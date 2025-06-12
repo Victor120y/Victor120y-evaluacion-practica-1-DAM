@@ -21,6 +21,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.veterinaria.data.AppDB;
+import com.example.veterinaria.data.Usuario;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,30 +47,28 @@ public class MainActivity extends AppCompatActivity {
         Button btnSalir = findViewById(R.id.btnSalir); // Botón "Salir"
 
         btnLogin.setOnClickListener(v -> {
-            // Recuperar datos de SharedPreferences
-            SharedPreferences preferencias = getSharedPreferences("preferences", Context.MODE_PRIVATE);
-            String usuarioGuardado = preferencias.getString("Usuario", null);
-            String claveGuardada = preferencias.getString("Clave", null);
-
-            // Obtener datos ingresados por el usuario
             String usuarioIngresado = txtIngresoUsuario.getText().toString();
             String claveIngresada = txtIngresoPassword.getText().toString();
 
-            // Comparar datos
-            if (usuarioGuardado != null && claveGuardada != null) {
-                if (usuarioGuardado.equals(usuarioIngresado) && claveGuardada.equals(claveIngresada)) {
-                    Toast.makeText(MainActivity.this, "Login exitoso", Toast.LENGTH_SHORT).show();
+            new Thread(() -> {
+                AppDB db = AppDB.getInstance(getApplicationContext());
+                Usuario usuario = db.usuarioDAO().buscarPorNombre(usuarioIngresado);
 
-                    // Crea un Intent para iniciar RegistrarActivity
-                    Intent intent = new Intent(this, HomeActivity.class); // aqui pasamos al home
-                    startActivity(intent); // Inicia la actividad
-                    Toast.makeText(this, "Abriendo pantalla de home...", Toast.LENGTH_SHORT).show(); // Opcional
-                } else {
-                    Toast.makeText(MainActivity.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
-                }
-            } else {
-                Toast.makeText(MainActivity.this, "No hay usuarios registrados", Toast.LENGTH_SHORT).show();
-            }
+                runOnUiThread(() -> {
+                    if (usuario != null) {
+                        if (usuario.password.equals(claveIngresada)) {
+                            Toast.makeText(MainActivity.this, "Login exitoso", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(this, HomeActivity.class);
+                            startActivity(intent);
+                            Toast.makeText(this, "Abriendo pantalla de home...", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(MainActivity.this, "No hay usuarios registrados", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }).start();
         });
 
         btnSalir.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             finishAffinity();
             return true; // Indica que el evento fue manejado
 
-        } else {
+        }  else {
             return super.onOptionsItemSelected(item); // Default handling
         }
     }
