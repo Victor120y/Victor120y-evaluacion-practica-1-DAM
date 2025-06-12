@@ -21,5 +21,11 @@
             android:id="@+id/nav_pacientes"
             android:icon="@drawable/ic_menu_paciente"
             android:title="Pacientes" />
+
+        <item
+            android:id="@+id/nav_lista_pacientes"
+            android:icon="@drawable/listapaciente"
+            android:title="Lista de Pacientes" />
+
     </group>
 </menu>

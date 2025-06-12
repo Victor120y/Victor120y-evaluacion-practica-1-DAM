@@ -7,6 +7,7 @@
         <item name="android:textViewStyle">@style/textviewNightPersonalizado</item>
         <item name="editTextStyle">@style/edittextNightPersonalizado</item>
         <item name="materialButtonStyle">@style/buttonNihgtPersonalizado</item>
+        <item name="colorControlNormal">@color/green</item>
     </style>
 
     <style name="textviewNightPersonalizado" parent="Widget.AppCompat.TextView">

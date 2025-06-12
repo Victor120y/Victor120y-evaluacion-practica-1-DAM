@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EditTextPro" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textColorHint">?android:textColorHint</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:background">@drawable/edittext_bg</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+</resources>

@@ -1,28 +1,32 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Tema3_5" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimary">@color/blue</item>
-        <item name="android:textColorPrimary">@color/grey</item>
+        <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textViewStyle">@style/textviewPersonalizado</item>
         <item name="editTextStyle">@style/edittextPersonalizado</item>
         <item name="materialButtonStyle">@style/buttonPersonalizado</item>
-
+        <item name="colorControlNormal">@color/blue</item>
+        <item name="colorOnSurface">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="colorSecondary">@color/blue</item>
+        <item name="textInputStyle">@style/Widget.Material3.TextInputLayout.OutlinedBox</item>
     </style>
 
     <style name="textviewPersonalizado" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/blue</item>
-        <item name="android:textSize">15dp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:fontFamily">sans-serif-black</item>
         <item name="android:fontStyle">italic</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="edittextPersonalizado" parent="Widget.AppCompat.EditText">
+    <!-- Solo una definición y con padre correcto -->
+    <style name="edittextPersonalizado" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
         <item name="android:textColor">@color/blue</item>
-        <item name="android:textSize">15dp</item>
-        <item name="android:background">@color/grey</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColorHint">@color/blue</item>
     </style>
 
     <style name="buttonPersonalizado" parent="Widget.MaterialComponents.Button.OutlinedButton">
