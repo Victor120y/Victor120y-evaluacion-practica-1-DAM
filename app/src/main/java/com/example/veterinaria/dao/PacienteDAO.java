@@ -17,5 +17,8 @@ public interface PacienteDAO {
 
     @Query("SELECT * FROM Paciente")
     List<Paciente> obtenerTodos();
+
+    @Query("SELECT * FROM Paciente WHERE nombre LIKE '%' || :query || '%' OR encargado LIKE '%' || :query || '%'")
+    List<Paciente> buscarPorNombreODueno(String query);
 }
 
