@@ -29,7 +29,23 @@ public class fragment_lista_pacientes extends Fragment {
 
         RecyclerView recyclerView = view.findViewById(R.id.rcvLista);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new PacienteAdapter(listaPacientes);
+
+        adapter = new PacienteAdapter(listaPacientes, new PacienteAdapter.OnPacienteActionListener() {
+            @Override
+            public void onEditar(Paciente paciente) {
+                // Abre un diálogo o nueva pantalla para editar y luego actualiza la base de datos
+            }
+
+            @Override
+            public void onEliminar(Paciente paciente) {
+                new Thread(() -> {
+                    AppDB.getInstance(requireContext()).pacienteDAO().eliminar(paciente);
+                    buscarPacientes(""); // Refresca la lista
+                }).start();
+            }
+        });
+
+        //adapter = new PacienteAdapter(listaPacientes);
         recyclerView.setAdapter(adapter);
 
        androidx.appcompat.widget.SearchView searchView = view.findViewById(R.id.srcBusqueda);
