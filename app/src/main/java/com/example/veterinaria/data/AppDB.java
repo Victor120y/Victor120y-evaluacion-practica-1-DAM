@@ -17,7 +17,7 @@ public abstract class AppDB extends RoomDatabase {
     public abstract TareaDAO tareaDAO();
     public abstract UsuarioDAO usuarioDAO();
 
-    public abstract PacienteDAO pascienteDAO();
+    public abstract PacienteDAO pacienteDAO();
 
     public static synchronized AppDB getInstance(Context context) {
         if (instancia == null) {

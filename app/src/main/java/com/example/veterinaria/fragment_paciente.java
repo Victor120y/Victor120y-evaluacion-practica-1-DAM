@@ -39,7 +39,7 @@ public class fragment_paciente extends Fragment {
             Paciente paciente = new Paciente(nombre, especie, raza, edad, encargado, telefono);
 
             new Thread(() -> {
-                AppDB.getInstance(requireContext()).pascienteDAO().insertar(paciente);
+                AppDB.getInstance(requireContext()).pacienteDAO().insertar(paciente);
                 requireActivity().runOnUiThread(() -> {
                     Toast.makeText(getContext(), "Paciente agregado con éxito", Toast.LENGTH_SHORT).show();
                     edtNombre.setText("");

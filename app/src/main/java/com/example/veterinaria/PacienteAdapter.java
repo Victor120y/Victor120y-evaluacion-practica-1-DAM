@@ -29,12 +29,12 @@ public class PacienteAdapter extends RecyclerView.Adapter<PacienteAdapter.Pacien
         return new PacienteViewHolder(view);
     }
 
-    @Override
+   @Override
     public void onBindViewHolder(@NonNull PacienteViewHolder holder, int position) {
         Paciente paciente = pacientes.get(position);
-        holder.txtNombre.setText(paciente.nombre);
-        holder.txtEspecie.setText(paciente.especie);
-        holder.txtDueno.setText(paciente.encargado);
+        holder.txtNombre.setText("Nombre: " + paciente.nombre);
+        holder.txtEspecie.setText("Especie: " + paciente.especie);
+        holder.txtDueno.setText("Dueño: " + paciente.encargado);
     }
 
     @Override
