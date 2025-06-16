@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.veterinaria.R;
+import com.example.veterinaria.data.AppDB;
 import com.example.veterinaria.data.Paciente;
 
 import java.util.List;
@@ -59,7 +60,53 @@ public class PacienteAdapter extends RecyclerView.Adapter<PacienteAdapter.Pacien
 
         // Listeners de editar y eliminar
         if (actionListener != null) {
-            holder.btnEditar.setOnClickListener(v -> actionListener.onEditar(paciente));
+            holder.btnEditar.setOnClickListener(v -> {
+                View dialogView = LayoutInflater.from(holder.itemView.getContext()).inflate(R.layout.dialog_editar_paciente, null);
+                TextView txtNombre = dialogView.findViewById(R.id.txtNombreEditar);
+                TextView txtEspecie = dialogView.findViewById(R.id.txtEspecieEditar);
+                TextView txtDueno = dialogView.findViewById(R.id.txtDuenoEditar);
+
+                // Prellenar los datos actuales
+                txtNombre.setText(paciente.nombre);
+                txtEspecie.setText(paciente.especie);
+                txtDueno.setText(paciente.encargado);
+
+                new android.app.AlertDialog.Builder(holder.itemView.getContext())
+                    .setTitle("Editar paciente")
+                    .setView(dialogView)
+                    .setPositiveButton("Guardar", (dialog, which) -> {
+                        // Validar los datos
+                        String nombre = txtNombre.getText().toString().trim();
+                        String especie = txtEspecie.getText().toString().trim();
+                        String dueno = txtDueno.getText().toString().trim();
+
+                        if (nombre.isEmpty() || especie.isEmpty() || dueno.isEmpty()) {
+                            Toast.makeText(holder.itemView.getContext(), "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        // Actualizar los datos del paciente
+                        paciente.nombre = nombre;
+                        paciente.especie = especie;
+                        paciente.encargado = dueno;
+
+                        // Guardar en la base de datos en un hilo secundario
+                        new Thread(() -> {
+                            AppDB.getInstance(holder.itemView.getContext()).pacienteDAO().actualizar(paciente);
+                            // Refrescar la lista en el hilo principal
+                            ((android.app.Activity) holder.itemView.getContext()).runOnUiThread(() -> {
+                                notifyItemChanged(holder.getAdapterPosition());
+                                Toast.makeText(holder.itemView.getContext(), "Paciente actualizado correctamente", Toast.LENGTH_SHORT).show();
+                            });
+                        }).start();
+                    })
+                    .setNegativeButton("Cancelar", (dialog, which) -> {
+                        // No se realiza ninguna acción, el diálogo simplemente se cierra
+                        dialog.dismiss();
+                    })
+                    .show();
+            });
+
             holder.btnEliminar.setOnClickListener(v -> {
                 new android.app.AlertDialog.Builder(holder.itemView.getContext())
                     .setTitle("Eliminar paciente")
