@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.ImageButton; // Importa ImageButton
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -59,7 +60,21 @@ public class PacienteAdapter extends RecyclerView.Adapter<PacienteAdapter.Pacien
         // Listeners de editar y eliminar
         if (actionListener != null) {
             holder.btnEditar.setOnClickListener(v -> actionListener.onEditar(paciente));
-            holder.btnEliminar.setOnClickListener(v -> actionListener.onEliminar(paciente));
+            holder.btnEliminar.setOnClickListener(v -> {
+                new android.app.AlertDialog.Builder(holder.itemView.getContext())
+                    .setTitle("Eliminar paciente")
+                    .setMessage("¿Estás seguro de que deseas eliminar este paciente de forma permanente?")
+                    .setPositiveButton("SÍ", (dialog, which) -> {
+                        try {
+                            actionListener.onEliminar(paciente);
+                            Toast.makeText(holder.itemView.getContext(), "Paciente eliminado correctamente", Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
+                            Toast.makeText(holder.itemView.getContext(), "Error al eliminar el paciente: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    })
+                    .setNegativeButton("NO", null)
+                    .show();
+            });
         }
     }
 
