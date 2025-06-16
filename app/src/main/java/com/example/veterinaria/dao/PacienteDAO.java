@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Delete;
+import androidx.room.Update;
 
 import com.example.veterinaria.data.Paciente;
 
@@ -22,7 +23,12 @@ public interface PacienteDAO {
     @Query("SELECT * FROM Paciente WHERE nombre LIKE '%' || :query || '%' OR encargado LIKE '%' || :query || '%'")
     List<Paciente> buscarPorNombreODueno(String query);
 
+    @Update
+    void actualizar(Paciente paciente);
+
     @Delete
     void eliminar(Paciente paciente);
+
+
 }
 
