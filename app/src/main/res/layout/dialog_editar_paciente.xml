@@ -27,7 +27,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            app:startIconDrawable="@android:drawable/ic_menu_edit">
+            app:startIconDrawable="@android:drawable/ic_menu_edit"
+            app:startIconTint="@color/teal_700">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtNombreEditar"
@@ -40,7 +41,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            app:startIconDrawable="@android:drawable/ic_menu_info_details">
+            app:startIconDrawable="@android:drawable/ic_menu_info_details"
+            app:startIconTint="@color/teal_700">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtEspecieEditar"
@@ -52,7 +54,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:startIconDrawable="@android:drawable/ic_menu_myplaces">
+            app:startIconDrawable="@android:drawable/ic_menu_myplaces"
+            app:startIconTint="@color/teal_700">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtDuenoEditar"
