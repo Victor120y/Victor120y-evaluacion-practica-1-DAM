@@ -71,8 +71,8 @@ public class PacienteAdapter extends RecyclerView.Adapter<PacienteAdapter.Pacien
                 txtEspecie.setText(paciente.especie);
                 txtDueno.setText(paciente.encargado);
 
-                new android.app.AlertDialog.Builder(holder.itemView.getContext())
-                    .setTitle("Editar paciente")
+                new android.app.AlertDialog.Builder(holder.itemView.getContext(), R.style.CustomAlertDialog )
+                    //.setTitle("Editar paciente")
                     .setView(dialogView)
                     .setPositiveButton("Guardar", (dialog, which) -> {
                         // Validar los datos

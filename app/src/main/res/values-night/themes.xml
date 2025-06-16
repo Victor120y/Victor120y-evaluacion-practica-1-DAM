@@ -7,11 +7,11 @@
         <item name="android:textViewStyle">@style/textviewNightPersonalizado</item>
         <item name="editTextStyle">@style/edittextNightPersonalizado</item>
         <item name="materialButtonStyle">@style/buttonNihgtPersonalizado</item>
-        <item name="colorControlNormal">@color/green</item>
+        <item name="colorControlNormal">@color/blue</item>
     </style>
 
     <style name="textviewNightPersonalizado" parent="Widget.AppCompat.TextView">
-        <item name="android:textColor">@color/green</item>
+        <item name="android:textColor">@color/grisclaro</item>
         <item name="android:textSize">15dp</item>
         <item name="android:fontFamily">sans-serif-black</item>
         <item name="android:fontStyle">italic</item>
@@ -19,9 +19,10 @@
     </style>
 
     <style name="edittextNightPersonalizado" parent="Widget.AppCompat.EditText">
-        <item name="android:textColor">@color/red</item>
+        <item name="android:textColor">@color/grisclaro</item>
         <item name="android:textSize">15dp</item>
         <item name="android:background">@color/grisclaro</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="buttonNihgtPersonalizado" parent="Widget.MaterialComponents.Button.OutlinedButton">
