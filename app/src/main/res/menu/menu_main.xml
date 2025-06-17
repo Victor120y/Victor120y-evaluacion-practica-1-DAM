@@ -6,11 +6,11 @@
 
     <item
         android:id="@+id/mnLogin"
-        android:title="Login"
+        android:title="Inicios de sesión"
         app:showAsAction="never"/>
     <item
         android:id="@+id/mnRegistro"
-        android:title="Registro"
+        android:title="Registro de usuario"
         app:showAsAction="never"/>
     <item
         android:id="@+id/mnSalir"
