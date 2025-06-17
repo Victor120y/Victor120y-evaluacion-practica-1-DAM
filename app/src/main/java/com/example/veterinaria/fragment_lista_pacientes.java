@@ -4,10 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+
 import androidx.appcompat.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -48,20 +51,28 @@ public class fragment_lista_pacientes extends Fragment {
         //adapter = new PacienteAdapter(listaPacientes);
         recyclerView.setAdapter(adapter);
 
-       androidx.appcompat.widget.SearchView searchView = view.findViewById(R.id.srcBusqueda);
-       searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
-           @Override
-           public boolean onQueryTextSubmit(String query) {
-               buscarPacientes(query);
-               return true;
-           }
+        androidx.appcompat.widget.SearchView searchView = view.findViewById(R.id.srcBusqueda);
 
-           @Override
-           public boolean onQueryTextChange(String newText) {
-               buscarPacientes(newText);
-               return true;
-           }
-       });
+        // Cambia el color del texto y del hint a azul
+        EditText searchEditText = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
+        searchEditText.setTextColor(ContextCompat.getColor(requireContext(), R.color.blue));
+        searchEditText.setHintTextColor(ContextCompat.getColor(requireContext(), R.color.blue));
+
+
+
+        searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                buscarPacientes(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                buscarPacientes(newText);
+                return true;
+            }
+        });
 
         // Cargar todos al inicio
         buscarPacientes("");
