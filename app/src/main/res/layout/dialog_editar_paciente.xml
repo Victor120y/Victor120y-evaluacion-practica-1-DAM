@@ -8,33 +8,33 @@
     android:layout_margin="24dp">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="24dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:layout_height="351dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="Editar Paciente"
+            android:textColor="@color/blue"
             android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="@color/teal_700"
-            android:layout_marginBottom="16dp"/>
+            android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             app:startIconDrawable="@android:drawable/ic_menu_edit"
-            app:startIconTint="@color/teal_700">
+            app:startIconTint="@color/blue">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtNombreEditar"
-                android:hint="Nombre"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:hint="Nombre" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -42,26 +42,26 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             app:startIconDrawable="@android:drawable/ic_menu_info_details"
-            app:startIconTint="@color/teal_700">
+            app:startIconTint="@color/blue">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtEspecieEditar"
-                android:hint="Especie"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:hint="Especie" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:startIconDrawable="@android:drawable/ic_menu_myplaces"
-            app:startIconTint="@color/teal_700">
+            app:startIconTint="@color/blue">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtDuenoEditar"
-                android:hint="Dueño"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:hint="Dueño" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
