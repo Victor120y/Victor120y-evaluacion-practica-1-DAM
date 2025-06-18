@@ -1,11 +1,10 @@
 package com.example.veterinaria;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
-import android.view.Menu; //Realizamos el import del paquete android.view.Menu para poder instanciar la clase del tipo Menu.
+import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -89,28 +89,31 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int itemId = item.getItemId(); // Get the item ID once
+        int itemId = item.getItemId();
 
-        if (itemId == R.id.mnLogin) {
-            //Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
-            return true; // Indicate that the event was handled
+        if (itemId == R.id.action_toggle_theme) {
+            int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+            if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            }
+            return true;
+        } else if (itemId == R.id.mnLogin) {
+            return true;
         } else if (itemId == R.id.mnRegistro) {
-
-            // Crea un Intent para iniciar RegistrarActivity
-            Intent intent = new Intent(this, RegistarActivity.class); // Asegúrate de que RegistrarActivity exista
-            startActivity(intent); // Inicia la actividad
-            Toast.makeText(this, "Abriendo pantalla de registro...", Toast.LENGTH_SHORT).show(); // Opcional
-            return true; // Indica que el evento fue manejado
-
-        }else if (itemId == R.id.mnSalir) {
-
+            Intent intent = new Intent(this, RegistarActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "Abriendo pantalla de registro...", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (itemId == R.id.mnSalir) {
             finishAffinity();
-            return true; // Indica que el evento fue manejado
-
-        }  else {
-            return super.onOptionsItemSelected(item); // Default handling
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
     }
 }
