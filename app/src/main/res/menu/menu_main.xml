@@ -2,8 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-
+    <item
+        android:id="@+id/action_toggle_theme"
+        android:icon="@drawable/modo_oscuro"
+        android:title="Modo oscuro"
+        app:showAsAction="always"
+        app:iconTint="@color/white"/>
     <item
         android:id="@+id/mnLogin"
         android:title="Inicios de sesión"

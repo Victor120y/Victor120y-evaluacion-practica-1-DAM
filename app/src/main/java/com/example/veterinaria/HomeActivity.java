@@ -1,5 +1,6 @@
 package com.example.veterinaria;
 
+    import android.content.res.Configuration;
     import android.os.Bundle;
     import android.view.MenuItem;
     import android.view.View;
@@ -9,6 +10,7 @@ package com.example.veterinaria;
     import com.google.android.material.navigation.NavigationView;
 
     import androidx.annotation.NonNull;
+    import androidx.appcompat.app.AppCompatDelegate;
     import androidx.navigation.NavController;
     import androidx.navigation.Navigation;
     import androidx.navigation.ui.AppBarConfiguration;
@@ -60,17 +62,24 @@ package com.example.veterinaria;
 
         @Override
         public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-            int itemId = item.getItemId(); // Get the item ID once
+            int itemId = item.getItemId();
 
-            if (itemId == R.id.action_settings) {
+            if (itemId == R.id.action_toggle_theme) {
+                int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+                if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }
+                return true;
+            } else if (itemId == R.id.action_settings) {
                 Toast.makeText(this, "Aun no hay nada", Toast.LENGTH_SHORT).show();
-                return true; // Indicate that the event was handled
-            }
-            else if (itemId == R.id.mnSalir) {
+                return true;
+            } else if (itemId == R.id.mnSalir) {
                 finishAffinity();
-                return true; // Indica que el evento fue manejado
+                return true;
             } else {
-                return super.onOptionsItemSelected(item); // Default handling
+                return super.onOptionsItemSelected(item);
             }
         }
     }
