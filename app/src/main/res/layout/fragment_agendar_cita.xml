@@ -56,7 +56,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtNombreDueno"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -75,7 +76,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtNombrePerro"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -95,7 +97,8 @@
                     android:id="@+id/edtTelefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone" />
+                    android:inputType="phone"
+                    android:textColor="@color/blue"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Campo Fecha y botón alineados -->
@@ -118,7 +121,8 @@
                     android:layout_height="wrap_content"
                     android:focusable="false"
                     android:inputType="text"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/blue"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Campo Hora y botón alineados -->
@@ -157,7 +161,8 @@
                     android:layout_height="wrap_content"
                     android:focusable="false"
                     android:inputType="text"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/blue"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Campo Motivo de la cita -->
@@ -192,7 +197,8 @@
                     android:id="@+id/edtMotivo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:textColor="@color/blue"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
