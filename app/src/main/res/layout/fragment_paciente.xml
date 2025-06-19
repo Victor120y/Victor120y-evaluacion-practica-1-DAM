@@ -56,7 +56,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtNombrePaciente"
                     android:layout_width="312dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -75,7 +76,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtEspecie"
                     android:layout_width="312dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -94,7 +96,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtRaza"
                     android:layout_width="312dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -114,7 +117,8 @@
                     android:id="@+id/edtEdad"
                     android:layout_width="312dp"
                     android:layout_height="wrap_content"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:textColor="@color/blue"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -133,7 +137,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtNombreDueno"
                     android:layout_width="312dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -153,7 +158,8 @@
                     android:id="@+id/edtTelefono"
                     android:layout_width="312dp"
                     android:layout_height="wrap_content"
-                    android:inputType="phone" />
+                    android:inputType="phone"
+                    android:textColor="@color/blue"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
